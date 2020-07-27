@@ -1,0 +1,353 @@
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-rgs9l[0m
+{"level":"warn","ts":1595837091.3119059,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1595837091.3121872,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-9w82k[0m
+{"level":"warn","ts":1595837091.671056,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1595837091.6719196,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-git-source-rajattyagipvr-jenkins-x-builder-q5brc-czbkv[0m
+{"level":"warn","ts":1595837180.7555797,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1595837182.7524946,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*************/jenkins-x-builders-base-image.git @ v0.0.37 in path /workspace/source"}
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-warm-cache[0m
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-build-base[0m
+Building base images
+
+Showing logs for build [32mrajattyagipvr-jenkins-x-builder-q5brc-1[0m stage [32mrelease[0m and container [32mstep-builder-baseimage[0m
+[36mINFO[0m[0000] Downloading base image centos:7              
+2020/07/27 08:07:10 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Found sha256:c2f1d5a9c0a81350fa0ad7e1eee99e379d75fe53823d44b5469eb2eb6092c941 in local cache 
+[36mINFO[0m[0002] Found manifest at /workspace/sha256:c2f1d5a9c0a81350fa0ad7e1eee99e379d75fe53823d44b5469eb2eb6092c941.json 
+[36mINFO[0m[0002] Checking for cached layer gcr.io/jenkinsxio/cache-builder:c8bd968ed25481a85ff562e39244a87c69f9954a10ed8c2011a946800489f1ac... 
+[36mINFO[0m[0002] No cached layer found for cmd RUN yum update  -y &&     yum install -y epel-release &&     yum install -y unzip                    which                    make                    wget                    zip                    bzip2                    python-pip &&     pip install anchorecli yamale pre-commit detect-secrets &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&     yum install -y google-chrome-stable_current_x86_64.rpm &&     yum install -y Xvfb &&     rm google-chrome-stable_current_x86_64.rpm &&     yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&     yum install -y gcc perl-ExtUtils-MakeMaker &&     cd /usr/src  &&     wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&     tar xzf git-${GIT_VERSION}.tar.gz  &&     cd git-${GIT_VERSION} &&     make prefix=/usr/local/git all  &&     make prefix=/usr/local/git install &&     cd /usr/src &&     rm -rf git-${GIT_VERSION}.tar.gz &&     rm -rf git-${GIT_VERSION} &&     yum -y groupinstall 'Development Tools' &&     yum remove -y git &&     wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && mv jq /usr/bin/jq &&     wget https://github.com/mikefarah/yq/releases/download/${YQ_RELEASE_VERSION}/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq && mv yq /usr/bin/yq &&     yum clean all 
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN yum update  -y &&     yum install -y epel-release &&     yum install -y unzip                    which                    make                    wget                    zip                    bzip2                    python-pip &&     pip install anchorecli yamale pre-commit detect-secrets &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&     yum install -y google-chrome-stable_current_x86_64.rpm &&     yum install -y Xvfb &&     rm google-chrome-stable_current_x86_64.rpm &&     yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&     yum install -y gcc perl-ExtUtils-MakeMaker &&     cd /usr/src  &&     wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&     tar xzf git-${GIT_VERSION}.tar.gz  &&     cd git-${GIT_VERSION} &&     make prefix=/usr/local/git all  &&     make prefix=/usr/local/git install &&     cd /usr/src &&     rm -rf git-${GIT_VERSION}.tar.gz &&     rm -rf git-${GIT_VERSION} &&     yum -y groupinstall 'Development Tools' &&     yum remove -y git &&     wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && mv jq /usr/bin/jq &&     wget https://github.com/mikefarah/yq/releases/download/${YQ_RELEASE_VERSION}/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq && mv yq /usr/bin/yq &&     yum clean all requires it. 
+[36mINFO[0m[0006] Taking snapshot of full filesystem...        
+[36mINFO[0m[0007] ENV LANG en_US.UTF-8                         
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENV LANGUAGE en_US:en                        
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENV LC_ALL en_US.UTF-8                       
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENV GIT_VERSION 2.21.1                       
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENV JQ_RELEASE_VERSION 1.5                   
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] ENV YQ_RELEASE_VERSION 2.4.1                 
+[36mINFO[0m[0007] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0007] RUN yum update  -y &&     yum install -y epel-release &&     yum install -y unzip                    which                    make                    wget                    zip                    bzip2                    python-pip &&     pip install anchorecli yamale pre-commit detect-secrets &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&     yum install -y google-chrome-stable_current_x86_64.rpm &&     yum install -y Xvfb &&     rm google-chrome-stable_current_x86_64.rpm &&     yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&     yum install -y gcc perl-ExtUtils-MakeMaker &&     cd /usr/src  &&     wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&     tar xzf git-${GIT_VERSION}.tar.gz  &&     cd git-${GIT_VERSION} &&     make prefix=/usr/local/git all  &&     make prefix=/usr/local/git install &&     cd /usr/src &&     rm -rf git-${GIT_VERSION}.tar.gz &&     rm -rf git-${GIT_VERSION} &&     yum -y groupinstall 'Development Tools' &&     yum remove -y git &&     wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && mv jq /usr/bin/jq &&     wget https://github.com/mikefarah/yq/releases/download/${YQ_RELEASE_VERSION}/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq && mv yq /usr/bin/yq &&     yum clean all 
+[36mINFO[0m[0007] cmd: /bin/sh                                 
+[36mINFO[0m[0007] args: [-c yum update  -y &&     yum install -y epel-release &&     yum install -y unzip                    which                    make                    wget                    zip                    bzip2                    python-pip &&     pip install anchorecli yamale pre-commit detect-secrets &&     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm &&     yum install -y google-chrome-stable_current_x86_64.rpm &&     yum install -y Xvfb &&     rm google-chrome-stable_current_x86_64.rpm &&     yum install -y curl-devel expat-devel gettext-devel openssl-devel zlib-devel &&     yum install -y gcc perl-ExtUtils-MakeMaker &&     cd /usr/src  &&     wget https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz  &&     tar xzf git-${GIT_VERSION}.tar.gz  &&     cd git-${GIT_VERSION} &&     make prefix=/usr/local/git all  &&     make prefix=/usr/local/git install &&     cd /usr/src &&     rm -rf git-${GIT_VERSION}.tar.gz &&     rm -rf git-${GIT_VERSION} &&     yum -y groupinstall 'Development Tools' &&     yum remove -y git &&     wget https://github.com/stedolan/jq/releases/download/jq-${JQ_RELEASE_VERSION}/jq-linux64 && mv jq-linux64 jq && chmod +x jq && mv jq /usr/bin/jq &&     wget https://github.com/mikefarah/yq/releases/download/${YQ_RELEASE_VERSION}/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq && mv yq /usr/bin/yq &&     yum clean all] 
+Loaded plugins: fastestmirror, ovl
+Determining fastest mirrors
+ * base: d36uatko69830t.cloudfront.net
+ * extras: d36uatko69830t.cloudfront.net
+ * updates: d36uatko69830t.cloudfront.net
+Resolving Dependencies
+--> Running transaction check
+---> Package bind-license.noarch 32:9.11.4-16.P2.el7_8.2 will be updated
+---> Package bind-license.noarch 32:9.11.4-16.P2.el7_8.6 will be an update
+---> Package binutils.x86_64 0:2.27-43.base.el7 will be updated
+---> Package binutils.x86_64 0:2.27-43.base.el7_8.1 will be an update
+---> Package ca-certificates.noarch 0:2019.2.32-76.el7_7 will be updated
+---> Package ca-certificates.noarch 0:2020.2.41-70.0.el7_8 will be an update
+---> Package dbus.x86_64 1:1.10.24-13.el7_6 will be updated
+---> Package dbus.x86_64 1:1.10.24-14.el7_8 will be an update
+---> Package dbus-libs.x86_64 1:1.10.24-13.el7_6 will be updated
+---> Package dbus-libs.x86_64 1:1.10.24-14.el7_8 will be an update
+---> Package device-mapper.x86_64 7:1.02.164-7.el7_8.1 will be updated
+---> Package device-mapper.x86_64 7:1.02.164-7.el7_8.2 will be an update
+---> Package device-mapper-libs.x86_64 7:1.02.164-7.el7_8.1 will be updated
+---> Package device-mapper-libs.x86_64 7:1.02.164-7.el7_8.2 will be an update
+---> Package systemd.x86_64 0:219-73.el7_8.5 will be updated
+---> Package systemd.x86_64 0:219-73.el7_8.8 will be an update
+---> Package systemd-libs.x86_64 0:219-73.el7_8.5 will be updated
+---> Package systemd-libs.x86_64 0:219-73.el7_8.8 will be an update
+---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-53.el7 will be updated
+---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-54.el7_8 will be an update
+---> Package yum-plugin-ovl.noarch 0:1.1.31-53.el7 will be updated
+---> Package yum-plugin-ovl.noarch 0:1.1.31-54.el7_8 will be an update
+---> Package yum-utils.noarch 0:1.1.31-53.el7 will be updated
+---> Package yum-utils.noarch 0:1.1.31-54.el7_8 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                    Arch     Version                    Repository
+                                                                           Size
+================================================================================
+Updating:
+ bind-license               noarch   32:9.11.4-16.P2.el7_8.6    updates    90 k
+ binutils                   x86_64   2.27-43.base.el7_8.1       updates   5.9 M
+ ca-certificates            noarch   2020.2.41-70.0.el7_8       updates   382 k
+ dbus                       x86_64   1:1.10.24-14.el7_8         updates   245 k
+ dbus-libs                  x86_64   1:1.10.24-14.el7_8         updates   169 k
+ device-mapper              x86_64   7:1.02.164-7.el7_8.2       updates   295 k
+ device-mapper-libs         x86_64   7:1.02.164-7.el7_8.2       updates   324 k
+ systemd                    x86_64   219-73.el7_8.8             updates   5.1 M
+ systemd-libs               x86_64   219-73.el7_8.8             updates   416 k
+ yum-plugin-fastestmirror   noarch   1.1.31-54.el7_8            updates    34 k
+ yum-plugin-ovl             noarch   1.1.31-54.el7_8            updates    28 k
+ yum-utils                  noarch   1.1.31-54.el7_8            updates   122 k
+
+Transaction Summary
+================================================================================
+Upgrade  12 Packages
+
+Total download size: 13 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+warning: /var/cache/yum/x86_64/7/updates/packages/bind-license-9.11.4-16.P2.el7_8.6.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for bind-license-9.11.4-16.P2.el7_8.6.noarch.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                               72 MB/s |  13 MB  00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-8.2003.0.el7.centos.x86_64 (@CentOS)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : systemd-libs-219-73.el7_8.8.x86_64                          1/24 
+  Updating   : 1:dbus-libs-1.10.24-14.el7_8.x86_64                         2/24 
+  Updating   : systemd-219-73.el7_8.8.x86_64                               3/24 
+Failed to get D-Bus connection: Operation not permitted
+  Updating   : 1:dbus-1.10.24-14.el7_8.x86_64                              4/24 
+  Updating   : 7:device-mapper-libs-1.02.164-7.el7_8.2.x86_64              5/24 
+  Updating   : 7:device-mapper-1.02.164-7.el7_8.2.x86_64                   6/24 
+  Updating   : 32:bind-license-9.11.4-16.P2.el7_8.6.noarch                 7/24 
+  Updating   : yum-plugin-ovl-1.1.31-54.el7_8.noarch                       8/24 
+  Updating   : yum-utils-1.1.31-54.el7_8.noarch                            9/24 
+  Updating   : binutils-2.27-43.base.el7_8.1.x86_64                       10/24 
+install-info: No such file or directory for /usr/share/info/as.info.gz
+install-info: No such file or directory for /usr/share/info/binutils.info.gz
+install-info: No such file or directory for /usr/share/info/gprof.info.gz
+install-info: No such file or directory for /usr/share/info/ld.info.gz
+install-info: No such file or directory for /usr/share/info/standards.info.gz
+  Updating   : yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch            11/24 
+  Updating   : ca-certificates-2020.2.41-70.0.el7_8.noarch                12/24 
+  Cleanup    : 32:bind-license-9.11.4-16.P2.el7_8.2.noarch                13/24 
+  Cleanup    : yum-plugin-ovl-1.1.31-53.el7.noarch                        14/24 
+  Cleanup    : yum-utils-1.1.31-53.el7.noarch                             15/24 
+  Cleanup    : yum-plugin-fastestmirror-1.1.31-53.el7.noarch              16/24 
+  Cleanup    : ca-certificates-2019.2.32-76.el7_7.noarch                  17/24 
+  Cleanup    : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64             18/24 
+  Cleanup    : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                  19/24 
+  Cleanup    : 1:dbus-1.10.24-13.el7_6.x86_64                             20/24 
+  Cleanup    : systemd-219-73.el7_8.5.x86_64                              21/24 
+  Cleanup    : 1:dbus-libs-1.10.24-13.el7_6.x86_64                        22/24 
+  Cleanup    : systemd-libs-219-73.el7_8.5.x86_64                         23/24 
+  Cleanup    : binutils-2.27-43.base.el7.x86_64                           24/24 
+  Verifying  : 1:dbus-libs-1.10.24-14.el7_8.x86_64                         1/24 
+  Verifying  : ca-certificates-2020.2.41-70.0.el7_8.noarch                 2/24 
+  Verifying  : yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch             3/24 
+  Verifying  : 7:device-mapper-1.02.164-7.el7_8.2.x86_64                   4/24 
+  Verifying  : systemd-219-73.el7_8.8.x86_64                               5/24 
+  Verifying  : systemd-libs-219-73.el7_8.8.x86_64                          6/24 
+  Verifying  : binutils-2.27-43.base.el7_8.1.x86_64                        7/24 
+  Verifying  : 1:dbus-1.10.24-14.el7_8.x86_64                              8/24 
+  Verifying  : yum-utils-1.1.31-54.el7_8.noarch                            9/24 
+  Verifying  : yum-plugin-ovl-1.1.31-54.el7_8.noarch                      10/24 
+  Verifying  : 7:device-mapper-libs-1.02.164-7.el7_8.2.x86_64             11/24 
+  Verifying  : 32:bind-license-9.11.4-16.P2.el7_8.6.noarch                12/24 
+  Verifying  : yum-plugin-ovl-1.1.31-53.el7.noarch                        13/24 
+  Verifying  : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64             14/24 
+  Verifying  : ca-certificates-2019.2.32-76.el7_7.noarch                  15/24 
+  Verifying  : 1:dbus-libs-1.10.24-13.el7_6.x86_64                        16/24 
+  Verifying  : 32:bind-license-9.11.4-16.P2.el7_8.2.noarch                17/24 
+  Verifying  : binutils-2.27-43.base.el7.x86_64                           18/24 
+  Verifying  : 1:dbus-1.10.24-13.el7_6.x86_64                             19/24 
+  Verifying  : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                  20/24 
+  Verifying  : yum-utils-1.1.31-53.el7.noarch                             21/24 
+  Verifying  : systemd-219-73.el7_8.5.x86_64                              22/24 
+  Verifying  : systemd-libs-219-73.el7_8.5.x86_64                         23/24 
+  Verifying  : yum-plugin-fastestmirror-1.1.31-53.el7.noarch              24/24 
+
+Updated:
+  bind-license.noarch 32:9.11.4-16.P2.el7_8.6                                   
+  binutils.x86_64 0:2.27-43.base.el7_8.1                                        
+  ca-certificates.noarch 0:2020.2.41-70.0.el7_8                                 
+  dbus.x86_64 1:1.10.24-14.el7_8                                                
+  dbus-libs.x86_64 1:1.10.24-14.el7_8                                           
+  device-mapper.x86_64 7:1.02.164-7.el7_8.2                                     
+  device-mapper-libs.x86_64 7:1.02.164-7.el7_8.2                                
+  systemd.x86_64 0:219-73.el7_8.8                                               
+  systemd-libs.x86_64 0:219-73.el7_8.8                                          
+  yum-plugin-fastestmirror.noarch 0:1.1.31-54.el7_8                             
+  yum-plugin-ovl.noarch 0:1.1.31-54.el7_8                                       
+  yum-utils.noarch 0:1.1.31-54.el7_8                                            
+
+Complete!
+Loaded plugins: fastestmirror, ovl
+Loading mirror speeds from cached hostfile
+ * base: d36uatko69830t.cloudfront.net
+ * extras: d36uatko69830t.cloudfront.net
+ * updates: d36uatko69830t.cloudfront.net
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch             Version         Repository        Size
+================================================================================
+Installing:
+ epel-release           noarch           7-11            extras            15 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : epel-release-7-11.noarch                                     1/1 
+  Verifying  : epel-release-7-11.noarch                                     1/1 
+
+Installed:
+  epel-release.noarch 0:7-11                                                    
+
+Complete!
+Loaded plugins: fastestmirror, ovl
+Loading mirror speeds from cached hostfile
+ * base: d36uatko69830t.cloudfront.net
+ * epel: d2lzkl7pfhq30w.cloudfront.net
+ * extras: d36uatko69830t.cloudfront.net
+ * updates: d36uatko69830t.cloudfront.net
+Resolving Dependencies
+--> Running transaction check
+---> Package bzip2.x86_64 0:1.0.6-13.el7 will be installed
+---> Package make.x86_64 1:3.82-24.el7 will be installed
+---> Package python2-pip.noarch 0:8.1.2-12.el7 will be installed
+--> Processing Dependency: python-setuptools for package: python2-pip-8.1.2-12.el7.noarch
+---> Package unzip.x86_64 0:6.0-21.el7 will be installed
+---> Package wget.x86_64 0:1.14-18.el7_6.1 will be installed
+---> Package which.x86_64 0:2.20-7.el7 will be installed
+---> Package zip.x86_64 0:3.0-11.el7 will be installed
+--> Running transaction check
+---> Package python-setuptools.noarch 0:0.9.8-7.el7 will be installed
+--> Processing Dependency: python-backports-ssl_match_hostname for package: python-setuptools-0.9.8-7.el7.noarch
+--> Running transaction check
+---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 will be installed
+--> Processing Dependency: python-ipaddress for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+--> Processing Dependency: python-backports for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+--> Running transaction check
+---> Package python-backports.x86_64 0:1.0-8.el7 will be installed
+---> Package python-ipaddress.noarch 0:1.0.16-2.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                               Arch     Version            Repository
+                                                                           Size
+================================================================================
+Installing:
+ bzip2                                 x86_64   1.0.6-13.el7       base    52 k
+ make                                  x86_64   1:3.82-24.el7      base   421 k
+ python2-pip                           noarch   8.1.2-12.el7       epel   1.7 M
+ unzip                                 x86_64   6.0-21.el7         base   171 k
+ wget                                  x86_64   1.14-18.el7_6.1    base   547 k
+ which                                 x86_64   2.20-7.el7         base    41 k
+ zip                                   x86_64   3.0-11.el7         base   260 k
+Installing for dependencies:
+ python-backports                      x86_64   1.0-8.el7          base   5.8 k
+ python-backports-ssl_match_hostname   noarch   3.5.0.1-1.el7      base    13 k
+ python-ipaddress                      noarch   1.0.16-2.el7       base    34 k
+ python-setuptools                     noarch   0.9.8-7.el7        base   397 k
+
+Transaction Summary
+================================================================================
+Install  7 Packages (+4 Dependent packages)
+
+Total download size: 3.6 M
+Installed size: 14 M
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/python2-pip-8.1.2-12.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for python2-pip-8.1.2-12.el7.noarch.rpm is not installed
+--------------------------------------------------------------------------------
+Total                                              3.8 MB/s | 3.6 MB  00:00     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@extras)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : python-ipaddress-1.0.16-2.el7.noarch                        1/11 
+  Installing : python-backports-1.0-8.el7.x86_64                           2/11 
+  Installing : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch    3/11 
+  Installing : python-setuptools-0.9.8-7.el7.noarch                        4/11 
+  Installing : python2-pip-8.1.2-12.el7.noarch                             5/11 
+  Installing : wget-1.14-18.el7_6.1.x86_64                                 6/11 
+install-info: No such file or directory for /usr/share/info/wget.info.gz
+  Installing : zip-3.0-11.el7.x86_64                                       7/11 
+  Installing : which-2.20-7.el7.x86_64                                     8/11 
+install-info: No such file or directory for /usr/share/info/which.info.gz
+  Installing : bzip2-1.0.6-13.el7.x86_64                                   9/11 
+  Installing : unzip-6.0-21.el7.x86_64                                    10/11 
+  Installing : 1:make-3.82-24.el7.x86_64                                  11/11 
+  Verifying  : 1:make-3.82-24.el7.x86_64                                   1/11 
+  Verifying  : unzip-6.0-21.el7.x86_64                                     2/11 
+  Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch    3/11 
+  Verifying  : bzip2-1.0.6-13.el7.x86_64                                   4/11 
+  Verifying  : which-2.20-7.el7.x86_64                                     5/11 
+  Verifying  : zip-3.0-11.el7.x86_64                                       6/11 
+  Verifying  : python-backports-1.0-8.el7.x86_64                           7/11 
+  Verifying  : python2-pip-8.1.2-12.el7.noarch                             8/11 
+  Verifying  : python-ipaddress-1.0.16-2.el7.noarch                        9/11 
+  Verifying  : wget-1.14-18.el7_6.1.x86_64                                10/11 
+  Verifying  : python-setuptools-0.9.8-7.el7.noarch                       11/11 
+
+Installed:
+  bzip2.x86_64 0:1.0.6-13.el7                make.x86_64 1:3.82-24.el7         
+  python2-pip.noarch 0:8.1.2-12.el7          unzip.x86_64 0:6.0-21.el7         
+  wget.x86_64 0:1.14-18.el7_6.1              which.x86_64 0:2.20-7.el7         
+  zip.x86_64 0:3.0-11.el7                   
+
+Dependency Installed:
+  python-backports.x86_64 0:1.0-8.el7                                           
+  python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7                    
+  python-ipaddress.noarch 0:1.0.16-2.el7                                        
+  python-setuptools.noarch 0:0.9.8-7.el7                                        
+
+Complete!
+Collecting anchorecli
+  Downloading https://files.pythonhosted.org/packages/7c/43/fd403535b3e3475d1f0853084a502d98403569a999996763115d64e0dd8f/anchorecli-0.7.2.tar.gz
+Collecting yamale
+  Downloading https://files.pythonhosted.org/packages/13/10/4b919340e71f8a4ceb9d8d0cec6cb4ec8e9ceb6658306801ef7f254d07e3/yamale-3.0.1.tar.gz
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-w5A12S/yamale/setup.py", line 4, in <module>
+        readme = open('README.md', encoding='utf-8').read()
+    TypeError: 'encoding' is an invalid keyword argument for this function
+    
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-w5A12S/yamale/
+You are using pip version 8.1.2, however version 20.1.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+error building image: error building stage: waiting for process to exit: exit status 1
+[31m
+Pipeline failed on stage 'release' : container 'step-builder-baseimage'. The execution of the pipeline has stopped.[0m
