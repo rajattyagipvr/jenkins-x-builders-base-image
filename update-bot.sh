@@ -5,16 +5,16 @@ set -o nounset
 set -o pipefail
 
 jx step create pr docker \
-    --name gcr.io/jenkinsxio/builder-baseimage \
+    --name 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/builder-baseimage \
     --version ${VERSION} \
-    --repo https://github.com/jenkins-x/jenkins-x-builders-base.git
+    --repo https://github.com/rajattyagipvr/jenkins-x-builders-base.git
 
 jx step create pr docker \
-    --name gcr.io/jenkinsxio/builder-ruby-baseimage \
+    --name 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/builder-ruby-baseimage \
     --version ${VERSION} \
-    --repo https://github.com/jenkins-x/jenkins-x-builders-base.git
+    --repo https://github.com/rajattyagipvr/jenkins-x-builders-base.git
 
 jx step create pr docker \
-    --name gcr.io/jenkinsxio/builder-swift-baseimage \
+    --name 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/builder-swift-baseimage \
     --version ${VERSION} \
-    --repo https://github.com/jenkins-x/jenkins-x-builders-base.git
+    --repo https://github.com/rajattyagipvr/jenkins-x-builders-base.git
